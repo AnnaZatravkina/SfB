@@ -1,0 +1,55 @@
+.fullscreen-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    background: #313131;
+    z-index: 1000;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+
+    &.open {
+        display: flex;
+    }
+}
+
+.fullscreen-menu__close {
+    width: rem(20px);
+    height: rem(20px);
+    cursor: pointer;
+    color: $white;
+    position: absolute;
+
+    @include tablets {
+        left: rem(706px);
+        right: rem(42px);
+        top: rem(42px);
+        bottom: rem(911px);
+    }
+
+    @include phones {
+        left: rem(470px);
+        bottom: rem(718px);
+    }
+}
+
+.fullscreen-menu__list {
+    display: block;
+    flex-direction: column;
+    color: $white;
+    text-align: center;
+}
+
+.fullscreen-menu__item {
+    font-size: rem(36px);
+    line-height: rem(72px);
+}
+
+.fullscreen-menu__link {
+    text-decoration: none;
+    white-space: nowrap;
+}

@@ -1,0 +1,143 @@
+.products-menu-section {
+    background: url(../img/prodmenu.jpg) center center/cover no-repeat;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    
+    @include tablets {
+        position: relative;
+    }
+}
+
+.products-menu-section__title {
+    margin-top: rem(109px);
+    margin-right: rem(846px);
+    font-family: Play;
+    color: $white;
+
+    @include tablets {
+        margin-top: rem(85px);
+        margin-right: rem(262px);
+    }
+
+    @include phones {
+        margin-top: rem(76px);
+        margin-right: rem(85px);
+    }
+}
+
+.products__menu {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.products-menu__item {
+    display: flex;
+    
+    &.active {
+        .products-menu__content-text {
+            width: rem(524px);
+
+            @include tablets {
+                width: rem(382px);
+            }
+
+            @include phones {
+                width: rem(317px);
+            }
+        }
+        .products-menu__close {
+            display: block;
+        }
+    }
+}
+
+.products-menu__item.active {
+    @include tablets {
+        .fixed-menu {
+            display: none;
+        }
+    }
+}
+
+.products-menu__title {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: rem(102px);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    @include phones {
+        width: rem(90px);
+        font-size: rem(40px);
+    }
+}
+
+.products-menu__text {
+    color: $white;
+    font-size: rem(48px);
+    font-weight: 700;
+    transform: rotate(-180deg);
+    -webkit-writing-mode: vertical-lr;
+    writing-mode: tb-rl;
+    writing-mode: vertical-lr;
+    padding-top: rem(39px);
+}
+
+.products-menu__container {
+    height: 100%;
+}
+
+.products-menu__close {
+    display: none;
+    position: absolute;
+    top: rem(20px);
+    right: rem(25px);
+    border: none;
+    background: transparent;
+}
+
+.products-menu__close-icon {
+    width: rem(20px);
+    height: rem(20px);
+    cursor: pointer;
+    transition: .3s;
+    fill: $white;
+}
+
+.products-menu__content-text {
+    color: $white;
+    width: 0;
+    overflow: hidden;
+    transition: width 0.5s;
+    background: rgba(51, 53, 55, 0.9);
+    height: 100%;
+
+    @include phones {
+        transition: none;
+    }
+}
+
+.products-menu__content-paragraph {
+    padding: rem(31px);
+    padding-left: rem(38px);
+    padding-right: rem(80px);
+    min-width: rem(524px);
+    font-size: rem(16px);
+    line-height: rem(24px);
+
+    @include tablets {
+        padding: rem(42px);
+        padding-right: rem(53px);
+        min-width: rem(300px);
+    }
+    
+    @include phones {
+        padding: rem(29px);
+        padding-right: rem(35px);
+        min-width: rem(200px);
+    }
+}

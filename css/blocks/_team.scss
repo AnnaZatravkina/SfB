@@ -1,0 +1,101 @@
+.team {
+    display: flex;
+    justify-content: space-between;
+    margin-top: rem(53px);
+
+    @include tablets {
+       padding: 0 10%;
+       flex-direction: column;
+       align-items: center;
+
+       &.team--version--desktop {
+           display: none;
+       }
+
+       &.team--version--mobile {
+           display: flex;
+       }
+    }
+}
+
+.team__item {
+    position: relative;
+    max-width: rem(220px);
+    margin-right: rem(20px);
+    flex: 1;
+    text-align: center;
+
+    @include tablets {
+        margin-right: rem(0px);
+        flex: initial;
+    }
+}
+
+.team__member {
+    height: rem(290px);
+    margin-bottom: rem(21px);
+}
+
+.team__title {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: rem(21px);
+    font-weight: 700;
+    margin-bottom: rem(8px);
+    color: $black;
+
+    &:after {
+        content: url(./../img/trdown.png);
+        padding-left: rem(4px);        
+    }
+}
+
+button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0px;
+    text-transform: none;
+}
+
+.team--version--desktop .team__content {
+    position: absolute;
+    top: 100%;
+}
+
+.team__item {
+    &.active {
+        .team__title:after {
+            content: url(./../img/trup.png);
+        }
+    }
+}
+
+.team__content {
+    overflow: hidden;
+    transition: height .3s;
+    height: 0px;
+}
+
+.team__content-block {
+    padding-bottom: rem(10px);
+}
+
+.team__post {
+    font-weight: normal;
+    color: #000;
+    padding-bottom: rem(4px);
+}
+
+.team--version--mobile .team__item {
+    margin-bottom: rem(16px);
+}
+
+.team--version--mobile {
+    display: none;
+
+    @include tablets {
+        display: flex;
+    }
+}

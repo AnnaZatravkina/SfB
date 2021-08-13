@@ -1,0 +1,38 @@
+.dots {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: rem(60px) rem(60px);
+    position: absolute;
+
+    &__small {
+        width: rem(11px);
+        height: rem(11px);
+        background: #DADADA;
+        border-radius: 50%;
+    }
+
+    &__big {
+        width: rem(21px);
+        height: rem(21px);
+        background: #DADADA;
+        border-radius: 50%;
+        margin: rem(0px) rem(10px);
+    }
+
+    &--left {
+        left: 53%;
+    }
+
+    &--right {
+        right: 53%;
+    }
+
+    @include tablets {
+        display: none;
+    }
+    
+    @include phones {
+        display: none;   
+    }
+}

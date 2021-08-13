@@ -1,0 +1,141 @@
+.player-section {
+    background: #F8FAF9;
+}
+
+.player {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    &.active .player__splash {
+        display: none;
+    }
+
+    &.paused {
+        .player__start {
+           border: none;
+        }
+    }
+
+    &:after,
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: rem(5px);
+        top: 0px;
+        bottom: 0px;
+    }
+
+    &:after {
+        right: 0px;
+    }
+
+    &:before {
+        left: 0px;
+    }
+}
+
+.player-section__container {
+    margin-top: rem(31px);
+
+    @include tablets {
+        margin-top: rem(40px);
+        margin-left: rem(60px);
+        width: 85%;
+    }
+
+    @include phones {
+        margin-left: rem(38px);
+    }
+}
+
+#yt-player {
+    @include tablets {
+        width: rem(594px);
+        height: rem(352px);
+    }
+
+    @include phones {
+        width: rem(394px);
+        height: rem(233px);
+    }
+}
+
+.player__splash {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    cursor: pointer;
+    background:  url(../img/playbig.png) center center no-repeat,
+    url(../img/splash.png) center center/cover no-repeat;
+}
+
+.player__controls {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: rem(35px);
+    background: #404040;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 rem(17px);
+
+    @include tablets {
+        padding: 0 rem(10px);
+    }
+}
+
+.player__start {
+    background: url(./../img/playmin.svg);
+    width: rem(11px);
+    height: rem(16px);
+
+    @include phones {
+        padding-right: rem(12px);
+    }
+}
+
+.player__playback {
+    position: relative;
+    height: rem(16px);
+    width: rem(650px);
+    
+    &:before {
+        content: "";
+        height: rem(7px);
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 0;
+        right: 0;
+        background: #626262;
+        transform: translateY(-50%);
+    }
+
+    @include tablets {
+        width: rem(450px);
+    }
+
+    @include phones {
+        width: rem(250px);
+    }
+}
+
+.player__playback-button {
+    background: $yellow;
+    border-radius: rem(50px);
+    border: none;
+    width: rem(16px);
+    height: rem(16px);
+    position: absolute;
+    padding: 0px;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
